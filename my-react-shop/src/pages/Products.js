@@ -16,7 +16,6 @@ const Products = () => {
     padding: '2rem'
   };
 
-  // Данные товаров с внешними изображениями
   const products = [
     { 
       id: 1, 
@@ -64,7 +63,6 @@ const Products = () => {
 
   const handleAddToCart = (product) => {
     addToCart(product);
-    // Можно добавить уведомление
     alert(`${product.name} добавлен в корзину!`);
   };
 

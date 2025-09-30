@@ -18,7 +18,6 @@ const ProductCard = ({ product, onAddToCart }) => {
     border: 'none'
   };
 
-  // Обработчик ошибки загрузки изображения
   const handleImageError = (e) => {
     e.target.style.display = 'none';
     const placeholder = e.target.nextElementSibling;

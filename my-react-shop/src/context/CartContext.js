@@ -4,7 +4,7 @@ const CartContext = createContext();
 
 const cartReducer = (state, action) => {
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case 'dobvkorz':
       const existingItem = state.items.find(item => item.id === action.payload.id);
       if (existingItem) {
         return {
@@ -21,13 +21,13 @@ const cartReducer = (state, action) => {
         items: [...state.items, { ...action.payload, quantity: 1 }]
       };
 
-    case 'REMOVE_FROM_CART':
+    case 'korz':
       return {
         ...state,
         items: state.items.filter(item => item.id !== action.payload)
       };
 
-    case 'CLEAR_CART':
+    case 'ochist':
       return {
         ...state,
         items: []
@@ -54,15 +54,15 @@ export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, initialState);
 
   const addToCart = (product) => {
-    dispatch({ type: 'ADD_TO_CART', payload: product });
+    dispatch({ type: 'dobvkorz', payload: product });
   };
 
   const removeFromCart = (productId) => {
-    dispatch({ type: 'REMOVE_FROM_CART', payload: productId });
+    dispatch({ type: 'korz', payload: productId });
   };
 
   const clearCart = () => {
-    dispatch({ type: 'CLEAR_CART' });
+    dispatch({ type: 'ochist' });
   };
 
   const getTotalPrice = () => {

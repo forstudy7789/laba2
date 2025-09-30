@@ -16,7 +16,6 @@ const Dashboard = () => {
 
   const handleLogin = () => {
     setIsLoggedIn(true);
-    // Редирект после успешного входа
     navigate('/dashboard');
   };
 
